@@ -4,104 +4,105 @@
 	<meta charset="UTF-8">
 	<title>ScrollSpy</title>
 	<style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
+    }
+    body, html {
       height: 100%;
       width: 100%;
     }
-    .menu {
-      width: 100%;
-      height: 75px;
-      background-color: rgba(0, 0, 0, 1);
-      position: fixed;
-      background-color:rgba(4, 180, 49, 0.6);
-      -webkit-transition: all 0.3s ease;
-      -moz-transition: all 0.3s ease;
-      -o-transition: all 0.3s ease;
-      transition: all 0.3s ease;
+    body {
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
     }
-    .light-menu {
-      width: 100%;
-      height: 75px;
-      background-color: rgba(255, 255, 255, 1);
-      position: fixed;
-      background-color:rgba(4, 180, 49, 0.6);
-      -webkit-transition: all 0.3s ease;
-      -moz-transition: all 0.3s ease;
-      -o-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-    }
-    #menu-center {
-      width: 980px;
-      height: 75px;
+    .container {
+      max-width: 980px;
       margin: 0 auto;
     }
-    #menu-center ul {
+    h2 {
+      padding: 100px 0 15px;
+    }
+    .header {
+      background-color: rgba(0, 0, 0, .2);
+      height: 75px;
+      position: fixed;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .navbar {
+      height: 75px;
+    }
+    .navbar ul {
       margin: 15px 0 0 0;
     }
-    #menu-center ul li {
+    .navbar li {
+      display: inline;
       list-style: none;
       margin: 0 30px 0 0;
-      display: inline;
     }
-    .active {
-      font-family:'Droid Sans', serif;
-      font-size: 14px;
-      color: #fff;
-      text-decoration: none;
-      line-height: 50px;
-    }
-    a {
-      font-family:'Droid Sans', serif;
-      font-size: 14px;
+    .navbar a {
       color: black;
-      text-decoration: none;
+      font-size: 14px;
       line-height: 50px;
+      text-decoration: none;
+      transition: color .2s;
     }
-    #home {
-      background-color: grey;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
+    .navbar a.active {
+      color: #fff;
+      line-height: 50px;
+      text-decoration: none;
     }
-    #portfolio {
-      height: 100%;
-      width: 100%;
-    }
-    #about {
-      background-color: blue;
+    .page {
       height: 100%;
       width: 100%;
     }
-    #contact {
-      background-color: red;
-      height: 100%;
-      width: 100%;
-    }
+    .page:nth-child(odd) { background-color: #eee; }
+    .page:nth-child(even) { background-color: #fff; }
 	</style>
 </head>
 
 <body>
-  <div class="m1 menu">
-    <div id="menu-center">
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <ul>
+          <li><a class="active" href="#home" title="Home">Home</a></li>
+          <li><a href="#portfolio" title="Portfolio">Portfolio</a></li>
+          <li><a href="#about" title="About">About</a></li>
+          <li><a href="#contact" title="Contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div id="home"></div>
-  <div id="portfolio"></div>
-  <div id="about"></div>
-  <div id="contact"></div>
+  <section id="home" class="page">
+    <div class="container">
+      <h2>Home</h2>
+    </div>
+  </section>
+
+  <section id="portfolio" class="page">
+    <div class="container">
+      <h2>Portfolio</h2>
+    </div>
+  </section>
+
+  <section id="about" class="page">
+    <div class="container">
+      <h2>About</h2>
+    </div>
+  </section>
+
+  <section id="contact" class="page">
+    <div class="container">
+      <h2>Contact</h2>
+    </div>
+  </section>
 
 	<script src="src/js/scrollspy.js"></script>
   <script>
-    var menu = document.querySelector('#menu-center');
+    var menu = document.querySelector('.navbar');
     scrollSpy(menu);
   </script>
 </body>
