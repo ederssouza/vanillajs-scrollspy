@@ -66,7 +66,7 @@ function scrollToY(scrollTargetY, speed, easing) {
 
 function menuControl(menu) {
 
-  var scrollPos = window.scrollY;
+  var scrollPos = window.pageYOffset;
   var links = menu.querySelectorAll('a[href^="#"]');
 
   for(var i = 0; i < links.length; i++) {
@@ -74,7 +74,7 @@ function menuControl(menu) {
     var currLink = links[i];
     var refElement = document.querySelector(currLink.getAttribute('href'));
 
-    if(refElement.offsetTop <= scrollPos && refElement.offsetTop + refElement.clientHeight > scrollPos) {
+    if(refElement.offsetTop <= scrollPos && (refElement.offsetTop + refElement.clientHeight) > scrollPos) {
       currLink.classList.add('active');
 
     } else {
