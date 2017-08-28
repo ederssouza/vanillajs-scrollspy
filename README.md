@@ -1,6 +1,6 @@
 # VanillaJS ScrollSpy
 
-ScrollSpy in pure JavaScript
+ScrollSpy in pure JavaScript.
 
 ## How to use
 
@@ -20,8 +20,8 @@ scrollSpy(menu, speed, easing);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>VanillaJS ScrollSpy</title>
+  <meta charset="UTF-8">
+  <title>VanillaJS ScrollSpy</title>
 </head>
 
 <body>
@@ -62,8 +62,7 @@ scrollSpy(menu, speed, easing);
     </div>
   </section>
 
-	<script src="src/js/scrollspy.js"></script>
-
+  <script src="src/js/scrollspy.js"></script>
   <script>
     var menu = document.querySelector('.navbar');
     scrollSpy(menu);
