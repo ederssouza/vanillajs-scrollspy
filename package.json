@@ -1,6 +1,6 @@
 {
   "name": "vanillajs-scrollspy",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "ScrollSpy in pure JavaScript",
   "main": "lib/index.js",
   "scripts": {
