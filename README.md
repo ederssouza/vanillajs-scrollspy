@@ -7,69 +7,110 @@ ScrollSpy in pure JavaScript.
 ## How to use
 
 ``` javascript
-scrollSpy(menu, speed, easing);
+const scrollspy = new VanillaScrollspy(menu, speed, easing);
+scrollspy.init();
 ```
 
 - **menu:** menu selector (#id, .class, ...)
-- **speed (optional):** scroll speed, default value `1500`
+- **speed (optional):** scroll speed, default value `2000`
 - **easing (optional):** scroll type `'easeOutSine'`, `'easeInOutSine'` or `'easeInOutQuint'`, default value `'easeInOutQuint'`
 
 ## Examples
 
 ### Basic template
 
+Available in `./examples/index.html`.
+
 ``` html
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>VanillaJS ScrollSpy</title>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VanillaScrollspy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      .navbar-brand > .navbar-item {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .navbar-menu .navbar-item {
+        font-size: 14px;
+        transition: background-color .26s, color .26s;
+      }
+      .navbar-menu .navbar-item.active {
+        background-color: #222;
+        color: red;
+      }
+      .page {
+        height: 100%;
+        padding: 80px 0;
+        width: 100%;
+      }
+      .page:nth-child(odd) { background-color: #ddd; }
+      .page:nth-child(even) { background-color: #fff; }
+    </style>
+  </head>
 
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <ul>
-          <li><a class="active" href="#home" title="Home">Home</a></li>
-          <li><a href="#portfolio" title="Portfolio">Portfolio</a></li>
-          <li><a href="#about" title="About">About</a></li>
-          <li><a href="#contact" title="Contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <body>
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a title="VanillaScrollspy" class="navbar-item">VanillaScrollspy</a>
 
-  <section id="home" class="page">
-    <div class="container">
-      <h2>Home</h2>
-    </div>
-  </section>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-  <section id="portfolio" class="page">
-    <div class="container">
-      <h2>Portfolio</h2>
-    </div>
-  </section>
+        <div id="navbar" class="navbar-menu navbar-scroll">
+          <div class="navbar-start">
+            <a href="#home" title="Home" class="navbar-item active">Home</a>
+            <a href="#portfolio" title="Portfolio" class="navbar-item">Portfolio</a>
+            <a href="#about" title="About" class="navbar-item">About</a>
+            <a href="#contact" title="Contact" class="navbar-item">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-  <section id="about" class="page">
-    <div class="container">
-      <h2>About</h2>
-    </div>
-  </section>
+    <section id="home" class="page">
+      <div class="container">
+        <h2 class="title">Home</h2>
+      </div>
+    </section>
 
-  <section id="contact" class="page">
-    <div class="container">
-      <h2>Contact</h2>
-    </div>
-  </section>
+    <section id="portfolio" class="page">
+      <div class="container">
+        <h2 class="title">Portfolio</h2>
+      </div>
+    </section>
 
-  <script src="dist/js/scrollspy.min.js"></script>
-  <script>
-    var menu = document.querySelector('.navbar');
-    scrollSpy(menu);
-  </script>
-</body>
+    <section id="about" class="page">
+      <div class="container">
+        <h2 class="title">About</h2>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <div class="container">
+        <h2 class="title">Contact</h2>
+      </div>
+    </section>
+
+    <script src="./dist/vanillajs-scrollspy.min.js"></script>
+    <script>
+      const navbar = document.querySelector('#navbar');
+      const scrollspy = new VanillaScrollspy(navbar);
+      scrollspy.init();
+    </script>
+  </body>
 </html>
 ```
 
@@ -77,15 +118,17 @@ scrollSpy(menu, speed, easing);
 Choose a number greater than or equal to 1.
 
 ``` javascript
-var menu = document.querySelector('.navbar');
-scrollSpy(menu, 2000);
+const navbar = document.querySelector('#navbar');
+const scrollspy = new VanillaScrollspy(navbar, 1000);
+scrollspy.init();
 ```
 
 ### Changing scroll type
 
 ``` javascript
-var menu = document.querySelector('.navbar');
-scrollSpy(menu, 2000, 'easeOutSine');
+const navbar = document.querySelector('#navbar');
+const scrollspy = new VanillaScrollspy(navbar, 1000, 'easeInOutQuint');
+scrollspy.init();
 ```
 
 ## Browser Support

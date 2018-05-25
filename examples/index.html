@@ -1,110 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>VanillaJS ScrollSpy</title>
-	<style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    body, html {
-      height: 100%;
-      width: 100%;
-    }
-    body {
-      font-family: Helvetica, sans-serif;
-      font-size: 16px;
-    }
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-    h2 {
-      padding: 100px 0 15px;
-    }
-    .header {
-      background-color: rgba(0, 0, 0, .2);
-      height: 75px;
-      position: fixed;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-    .navbar {
-      height: 75px;
-    }
-    .navbar ul {
-      margin: 15px 0 0 0;
-    }
-    .navbar li {
-      display: inline;
-      list-style: none;
-      margin: 0 30px 0 0;
-    }
-    .navbar a {
-      color: black;
-      font-size: 14px;
-      line-height: 50px;
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .navbar a.active {
-      color: #fff;
-      line-height: 50px;
-      text-decoration: none;
-    }
-    .page {
-      height: 100%;
-      width: 100%;
-    }
-    .page:nth-child(odd) { background-color: #eee; }
-    .page:nth-child(even) { background-color: #fff; }
-	</style>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VanillaScrollspy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      .navbar-brand > .navbar-item {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .navbar-menu .navbar-item {
+        font-size: 14px;
+        transition: background-color .26s, color .26s;
+      }
+      .navbar-menu .navbar-item.active {
+        background-color: #222;
+        color: red;
+      }
+      .page {
+        height: 100%;
+        padding: 80px 0;
+        width: 100%;
+      }
+      .page:nth-child(odd) { background-color: #ddd; }
+      .page:nth-child(even) { background-color: #fff; }
+    </style>
+  </head>
 
-<body>
-  <header class="header">
-    <div class="container">
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="active" href="#home" title="Home">Home</a></li>
-          <li><a href="#portfolio" title="Portfolio">Portfolio</a></li>
-          <li><a href="#about" title="About">About</a></li>
-          <li><a href="#contact" title="Contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <body>
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a title="VanillaScrollspy" class="navbar-item">VanillaScrollspy</a>
 
-  <section id="home" class="page">
-    <div class="container">
-      <h2>Home</h2>
-    </div>
-  </section>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-  <section id="portfolio" class="page">
-    <div class="container">
-      <h2>Portfolio</h2>
-    </div>
-  </section>
+        <div id="navbar" class="navbar-menu navbar-scroll">
+          <div class="navbar-start">
+            <a href="#home" title="Home" class="navbar-item active">Home</a>
+            <a href="#portfolio" title="Portfolio" class="navbar-item">Portfolio</a>
+            <a href="#about" title="About" class="navbar-item">About</a>
+            <a href="#contact" title="Contact" class="navbar-item">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-  <section id="about" class="page">
-    <div class="container">
-      <h2>About</h2>
-    </div>
-  </section>
+    <section id="home" class="page">
+      <div class="container">
+        <h2 class="title">Home</h2>
+      </div>
+    </section>
 
-  <section id="contact" class="page">
-    <div class="container">
-      <h2>Contact</h2>
-    </div>
-  </section>
+    <section id="portfolio" class="page">
+      <div class="container">
+        <h2 class="title">Portfolio</h2>
+      </div>
+    </section>
 
-	<script src="../dist/vanillajs-scrollspy.min.js"></script>
-  <script>
-    const navbar = document.querySelector('#navbar');
-    const scrollspy = new VanillaScrollspy(navbar, 1000, 'easeInOutQuint');
-    scrollspy.init();
-  </script>
-</body>
+    <section id="about" class="page">
+      <div class="container">
+        <h2 class="title">About</h2>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <div class="container">
+        <h2 class="title">Contact</h2>
+      </div>
+    </section>
+
+    <script src="../dist/vanillajs-scrollspy.min.js"></script>
+    <script>
+      const navbar = document.querySelector('#navbar');
+      const scrollspy = new VanillaScrollspy(navbar);
+      scrollspy.init();
+    </script>
+  </body>
 </html>
