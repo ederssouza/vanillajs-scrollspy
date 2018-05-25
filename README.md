@@ -1,5 +1,7 @@
 # VanillaJS ScrollSpy
 
+[![Build Status](https://travis-ci.org/ederssouza/vanillajs-scrollspy.svg?branch=master)](https://travis-ci.org/ederssouza/vanillajs-scrollspy)
+
 ScrollSpy in pure JavaScript.
 
 ## How to use
