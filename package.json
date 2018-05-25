@@ -1,30 +1,73 @@
 {
-  "name": "scrollspy",
-  "version": "1.0.0",
-  "description": "ScrollSpy in pure JavaScript",
-  "main": "scrollspy.js",
+  "name": "vanillajs-scrollspy",
+  "version": "1.0.3",
+  "description": "A wrapper to work with tha Spotify Web API.",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clear": "rimraf lib dist",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename vanillajs-scrollspy.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename vanillajs-scrollspy.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "lint:watch": "./node_modules/eslint-watch/bin/esw src/*.js -w",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test",
+    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ederssouza/scrollspy.git"
+    "url": "git+https://github.com/ederssouza/vanillajs-scrollspy.git"
   },
-  "author": "Eder Sampaio",
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Eder Sampaio <edersampaio@outlook.com.br>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ederssouza/scrollspy/issues"
+    "url": "https://github.com/ederssouza/vanillajs-scrollspy/issues"
   },
-  "homepage": "https://github.com/ederssouza/scrollspy#readme",
+  "homepage": "https://github.com/ederssouza/vanillajs-scrollspy#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-jshint": "^2.0.4",
-    "gulp-logger": "0.0.2",
-    "gulp-plumber": "^1.1.0",
-    "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^3.0.0",
-    "jshint": "^2.9.5",
-    "jshint-stylish": "^2.2.1"
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-watch": "^3.1.5",
+    "husky": "^0.14.3",
+    "jsdom": "^11.11.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.0.5",
+    "node-fetch": "^2.1.2",
+    "nyc": "^11.6.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^3.0.0",
+    "sinon-stub-promise": "^4.0.0",
+    "webpack": "^4.7.0",
+    "webpack-cli": "^2.1.2"
   }
 }
