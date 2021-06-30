@@ -111,6 +111,14 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+exports.default = function () {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return new (Function.prototype.bind.apply(VanillaScrollspy, [null].concat(args)))();
+};
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var fncAnimation = function fncAnimation(callback) {
@@ -129,7 +137,7 @@ var VanillaScrollspy = function () {
 
     _classCallCheck(this, VanillaScrollspy);
 
-    this.menu = menu;
+    this.$menu = menu;
     this.speed = speed;
     this.easing = easing;
   }
@@ -143,8 +151,8 @@ var VanillaScrollspy = function () {
 
       var scrollTargetY = targetY;
       var scrollY = window.scrollY || document.documentElement.scrollTop;
-      var currentTime = 0;
       var time = Math.max(0.1, Math.min(Math.abs(scrollY - scrollTargetY) / this.speed, 0.8));
+      var currentTime = 0;
 
       var easingEquations = {
         easeOutSine: function easeOutSine(pos) {
@@ -164,15 +172,17 @@ var VanillaScrollspy = function () {
 
       var tick = function tick() {
         currentTime += 1 / 60;
+
         var p = currentTime / time;
         var t = easingEquations[_this.easing](p);
 
         if (p < 1) {
           window.requestAnimFrame(tick);
           window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
-        } else {
-          window.scrollTo(0, scrollTargetY);
+          return;
         }
+
+        window.scrollTo(0, scrollTargetY);
       };
 
       tick();
@@ -180,41 +190,30 @@ var VanillaScrollspy = function () {
   }, {
     key: 'menuControl',
     value: function menuControl() {
-      var i = void 0;
-      var currLink = void 0;
-      var refElement = void 0;
-      var links = this.menu.querySelectorAll('a[href^="#"]');
+      var $links = this.$menu.querySelectorAll('a[href^="#"]');
       var scrollPos = window.scrollY || document.documentElement.scrollTop;
 
-      for (i = 0; i < links.length; i += 1) {
-        currLink = links[i];
-        refElement = document.querySelector(currLink.getAttribute('href'));
+      Array.from($links).forEach(function (link) {
+        var $elem = document.querySelector(link.getAttribute('href'));
 
-        if (refElement.offsetTop <= scrollPos && refElement.offsetTop + refElement.clientHeight > scrollPos) {
-          currLink.classList.add('active');
-        } else {
-          currLink.classList.remove('active');
-        }
-      }
+        return $elem.offsetTop <= scrollPos && $elem.offsetTop + $elem.clientHeight > scrollPos ? link.classList.add('active') : link.classList.remove('active');
+      });
     }
   }, {
     key: 'animated',
     value: function animated() {
       var self = this;
+
       function control(e) {
         e.preventDefault();
-        var target = document.querySelector(this.hash);
-        self.scrollToY(target.offsetTop);
+        var $target = document.querySelector(this.hash);
+        self.scrollToY($target.offsetTop);
       }
 
-      var i = void 0;
-      var link = void 0;
-      var links = this.menu.querySelectorAll('a[href^="#"]');
-
-      for (i = 0; i < links.length; i += 1) {
-        link = links[i];
-        link.addEventListener('click', control);
-      }
+      var $links = this.$menu.querySelectorAll('a[href^="#"]');
+      Array.from($links).forEach(function (link) {
+        return link.addEventListener('click', control);
+      });
     }
   }, {
     key: 'init',
@@ -223,15 +222,13 @@ var VanillaScrollspy = function () {
 
       this.animated();
       document.addEventListener('scroll', function () {
-        _this2.menuControl();
+        return _this2.menuControl();
       });
     }
   }]);
 
   return VanillaScrollspy;
 }();
-
-exports.default = VanillaScrollspy;
 
 /***/ })
 
