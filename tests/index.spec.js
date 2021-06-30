@@ -10,7 +10,7 @@ describe('vanillaScrollspy', () => {
   navbar.setAttribute('id', 'navbar')
 
   beforeEach(() => {
-    scrollspy = new VanillaScrollspy();
+    scrollspy = VanillaScrollspy();
   });
 
   describe('smoke tests', () => {
@@ -34,7 +34,7 @@ describe('vanillaScrollspy', () => {
       scrollspy = new VanillaScrollspy(navbar);
       scrollspy.init()
 
-      obj = { menu: navbar, speed: 2000, easing: 'easeOutSine' }
+      obj = { $menu: navbar, speed: 2000, easing: 'easeOutSine' }
       expect(scrollspy).to.be.eql(obj);
     });
 
@@ -42,7 +42,7 @@ describe('vanillaScrollspy', () => {
       scrollspy = new VanillaScrollspy(navbar, 1000);
       scrollspy.init()
 
-      obj = { menu: navbar, speed: 1000, easing: 'easeOutSine' }
+      obj = { $menu: navbar, speed: 1000, easing: 'easeOutSine' }
       expect(scrollspy).to.be.eql(obj);
     });
 
@@ -50,7 +50,7 @@ describe('vanillaScrollspy', () => {
       scrollspy = new VanillaScrollspy(navbar, 1500, 'easeInOutQuint');
       scrollspy.init()
 
-      obj = { menu: navbar, speed: 1500, easing: 'easeInOutQuint' }
+      obj = { $menu: navbar, speed: 1500, easing: 'easeInOutQuint' }
       expect(scrollspy).to.be.eql(obj);
     });
   });
