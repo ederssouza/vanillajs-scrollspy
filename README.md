@@ -19,7 +19,7 @@ $ npm install vanillajs-scrollspy --save
 ## How to use
 
 ```javascript
-const scrollspy = new VanillaScrollspy(menu, speed, easing);
+const scrollspy = VanillaScrollspy(menu, speed, easing);
 scrollspy.init();
 ```
 
@@ -33,7 +33,7 @@ scrollspy.init();
 import VanillaScrollspy from 'vanillajs-scrollspy';
 
 const navbar = document.querySelector('#navbar');
-const scrollspy = new VanillaScrollspy(navbar);
+const scrollspy = VanillaScrollspy(navbar);
 scrollspy.init();
 ```
 
@@ -43,7 +43,7 @@ scrollspy.init();
 const VanillaScrollspy = require('vanillajs-scrollspy').default;
 
 const navbar = document.querySelector('#navbar');
-const scrollspy = new VanillaScrollspy(navbar);
+const scrollspy = VanillaScrollspy(navbar);
 scrollspy.init();
 ```
 
@@ -61,7 +61,7 @@ After that the library will be available to the Global as `VanillaScrollspy`. Fo
 
 ``` javascript
 const navbar = document.querySelector('#navbar');
-const scrollspy = new VanillaScrollspy(navbar);
+const scrollspy = VanillaScrollspy(navbar);
 scrollspy.init();
 ```
 
@@ -156,7 +156,7 @@ Available in [`examples/index.html`](examples/index.html).
     <script src="./dist/vanillajs-scrollspy.min.js"></script>
     <script>
       const navbar = document.querySelector('#navbar');
-      const scrollspy = new VanillaScrollspy(navbar);
+      const scrollspy = VanillaScrollspy(navbar);
       scrollspy.init();
     </script>
   </body>
@@ -168,7 +168,7 @@ Choose a number greater than or equal to 1.
 
 ``` javascript
 const navbar = document.querySelector('#navbar');
-const scrollspy = new VanillaScrollspy(navbar, 1000);
+const scrollspy = VanillaScrollspy(navbar, 1000);
 scrollspy.init();
 ```
 
@@ -176,7 +176,7 @@ scrollspy.init();
 
 ``` javascript
 const navbar = document.querySelector('#navbar');
-const scrollspy = new VanillaScrollspy(navbar, 1000, 'easeInOutQuint');
+const scrollspy = VanillaScrollspy(navbar, 1000, 'easeInOutQuint');
 scrollspy.init();
 ```
 
