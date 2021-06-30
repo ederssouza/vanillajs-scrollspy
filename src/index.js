@@ -10,7 +10,7 @@ window.requestAnimFrame = (() =>
   fncAnimation
 )();
 
-export default class VanillaScrollspy {
+class VanillaScrollspy {
   constructor(menu, speed = 2000, easing = 'easeOutSine') {
     this.menu = menu;
     this.speed = speed;
@@ -97,4 +97,8 @@ export default class VanillaScrollspy {
       this.menuControl();
     });
   }
+}
+
+export default function (...args) {
+  return new VanillaScrollspy(...args);
 }
