@@ -16,6 +16,7 @@ class VanillaScrollspy {
     this.speed = speed;
     this.easing = easing;
   }
+
   scrollToY(targetY = 0) {
     const scrollTargetY = targetY;
     const scrollY = window.scrollY || document.documentElement.scrollTop;
@@ -53,6 +54,7 @@ class VanillaScrollspy {
 
     tick();
   }
+
   menuControl() {
     let i;
     let currLink;
@@ -74,6 +76,7 @@ class VanillaScrollspy {
       }
     }
   }
+
   animated() {
     const self = this;
     function control(e) {
@@ -91,6 +94,7 @@ class VanillaScrollspy {
       link.addEventListener('click', control);
     }
   }
+
   init() {
     this.animated();
     document.addEventListener('scroll', () => {
