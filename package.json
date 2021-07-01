@@ -6,7 +6,7 @@
   "module": "src/index.js",
   "scripts": {
     "clear": "rimraf lib dist",
-    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build": "npm run clear && babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
     "build:umd": "webpack --output-filename vanillajs-scrollspy.js",
     "build:umd:min": "webpack --mode production --output-filename vanillajs-scrollspy.min.js",
