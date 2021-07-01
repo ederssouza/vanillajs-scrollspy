@@ -58,7 +58,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-watch": "^7.0.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "jsdom": "^16.6.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^9.0.1",
