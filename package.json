@@ -7,11 +7,11 @@
   "scripts": {
     "clear": "rimraf lib dist",
     "build": "npm run clear && babel --out-dir lib src",
-    "build:watch": "npm run build -- --watch",
+    "build:watch": "npm run build --watch",
     "build:umd": "webpack --output-filename vanillajs-scrollspy.js",
     "build:umd:min": "webpack --mode production --output-filename vanillajs-scrollspy.min.js",
     "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
-    "lint": "eslint src/*.js",
+    "lint": "eslint src/**/*.js --fix",
     "lint:watch": "./node_modules/eslint-watch/bin/esw src/*.js -w",
     "prepush": "npm run lint",
     "test": "mocha tests/**/*.spec.js --require @babel/register",
