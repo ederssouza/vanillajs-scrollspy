@@ -3,11 +3,10 @@ const fncAnimation = (callback) => {
   return callback;
 };
 
-window.requestAnimFrame = (() =>
-  window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  fncAnimation
+window.requestAnimFrame = (() => window.requestAnimationFrame
+  || window.webkitRequestAnimationFrame
+  || window.mozRequestAnimationFrame
+  || fncAnimation
 )();
 
 class VanillaScrollspy {
@@ -82,7 +81,7 @@ class VanillaScrollspy {
     }
 
     const $links = this.$menu.querySelectorAll('a[href^="#"]');
-    Array.from($links).forEach(link => link.addEventListener('click', control));
+    Array.from($links).forEach((link) => link.addEventListener('click', control));
   }
 
   init() {
@@ -91,6 +90,6 @@ class VanillaScrollspy {
   }
 }
 
-export default function (...args) {
+export default function vanillaScrollspy(...args) {
   return new VanillaScrollspy(...args);
 }
