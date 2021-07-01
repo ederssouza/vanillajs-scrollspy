@@ -1,14 +1,12 @@
-import { join } from 'path';
+const { join } = require('path')
 
-const include = join(__dirname, 'src');
-
-export default {
+module.exports = {
   mode: 'development',
   entry: './index',
   output: {
     path: join(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'VanillaScrollspy',
+    library: 'VanillaScrollspy'
   },
   devtool: 'source-map',
   module: {
@@ -16,13 +14,8 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            ['es2015', { modules: false }]
-          ],
-        },
-      },
-    ],
-  },
-};
+        loader: 'babel-loader'
+      }
+    ]
+  }
+}
