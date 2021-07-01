@@ -30,7 +30,7 @@ module.exports = __webpack_require__(/*! ./src/index */ "./src/index.js").defaul
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ vanillaScrollspy)
 /* harmony export */ });
 function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
 
@@ -150,7 +150,7 @@ var VanillaScrollspy = /*#__PURE__*/function () {
   return VanillaScrollspy;
 }();
 
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+function vanillaScrollspy() {
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
   }
