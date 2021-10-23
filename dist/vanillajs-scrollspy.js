@@ -118,7 +118,7 @@ var VanillaScrollspy = /*#__PURE__*/function () {
         if (link.getAttribute('href') !== '#') {
           var $elem = document.querySelector(link.getAttribute('href'));
           if($elem){
-            return $elem.offsetTop <= scrollPos && $elem.offsetTop + $elem.clientHeight > scrollPos ? link.classList.add('active') : link.classList.remove('active');
+            return $elem.offsetTop <= scrollPos && $elem.offsetTop + $elem.clientHeight > scrollPos ? link.parentElement.classList.add('active') : link.parentElement.classList.remove('active');
           }
         }
       });
