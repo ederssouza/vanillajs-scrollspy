@@ -17,7 +17,7 @@ return /******/ (() => { // webpackBootstrap
   \******************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__(/*! ./src/index */ "./src/index.js").default;
+module.exports = __webpack_require__(/*! ./src/index */ "./src/index.js")["default"];
 
 /***/ }),
 
