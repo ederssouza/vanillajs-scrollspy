@@ -1,6 +1,6 @@
 {
   "name": "vanillajs-scrollspy",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "ScrollSpy in pure JavaScript",
   "main": "dist/vanillajs-scrollspy.cjs.js",
   "module": "dist/vanillajs-scrollspy.es.js",
