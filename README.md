@@ -4,72 +4,63 @@
 
 ScrollSpy in pure JavaScript.
 
-## Browser Support
-
-![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) | ![Chrome](https://cloud.githubusercontent.com/assets/398893/3528328/23bc7bc4-078e-11e4-8752-ba2809bf5cce.png) | ![Firefox](https://cloud.githubusercontent.com/assets/398893/3528329/26283ab0-078e-11e4-84d4-db2cf1009953.png) | ![Opera](https://cloud.githubusercontent.com/assets/398893/3528330/27ec9fa8-078e-11e4-95cb-709fd11dac16.png) | ![Safari](https://cloud.githubusercontent.com/assets/398893/3528331/29df8618-078e-11e4-8e3e-ed8ac738693f.png)
---- | --- | --- | --- | ---
-IE 10+ ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔
-
 ## Installation
 
-```bash
+```bash
 $ npm install vanillajs-scrollspy --save
 ```
 
 ## How to use
 
 ```javascript
-const scrollspy = VanillaScrollspy(menu, speed, easing);
-scrollspy.init();
+const menu = document.querySelector('#navbar')
+const scrollspy = VanillaScrollspy({ menu })
+scrollspy.init()
 ```
 
 - **menu:** menu selector (#id, .class, ...)
 - **speed (optional):** scroll speed, default value `2000`
-- **easing (optional):** scroll type `'easeOutSine'`, `'easeInOutSine'` or `'easeInOutQuint'`, default value `'easeInOutQuint'`
+- **easing (optional):** scroll type `'easeOutSine'`, `'easeInOutSine'` or `'easeInOutQuint'`, default value `'easeOutSine'`
 
 ### ES6
 
 ```javascript
-import VanillaScrollspy from 'vanillajs-scrollspy';
+import VanillaScrollspy from 'vanillajs-scrollspy'
 
-const navbar = document.querySelector('#navbar');
-const scrollspy = VanillaScrollspy(navbar);
-scrollspy.init();
+const menu = document.querySelector('#navbar')
+const scrollspy = VanillaScrollspy({ menu })
+scrollspy.init()
 ```
 
 ### CommonJS
 
 ```javascript
-const VanillaScrollspy = require('vanillajs-scrollspy').default;
+const VanillaScrollspy = require('vanillajs-scrollspy').default
 
-const navbar = document.querySelector('#navbar');
-const scrollspy = VanillaScrollspy(navbar);
-scrollspy.init();
+const menu = document.querySelector('#navbar')
+const scrollspy = VanillaScrollspy({ menu })
+scrollspy.init()
 ```
 
 ### UMD in Browser
 
 ```html
-<!-- to import non-minified version -->
-<script src="./dist/vanillajs-scrollspy.js"></script>
-
-<!-- to import minified version -->
 <script src="./dist/vanillajs-scrollspy.min.js"></script>
 ```
 
 After that the library will be available to the Global as `VanillaScrollspy`. Follow an example:
 
 ``` javascript
-const navbar = document.querySelector('#navbar');
-const scrollspy = VanillaScrollspy(navbar);
-scrollspy.init();
+const menu = document.querySelector('#navbar')
+const scrollspy = VanillaScrollspy({ menu })
+scrollspy.init()
 ```
 
 ## Examples
 
 ### Basic template
 
-Available in [`examples/index.html`](examples/index.html).
+Available in [`public/index.html`](public/index.html).
 
 ``` html
 <!DOCTYPE html>
@@ -153,11 +144,11 @@ Available in [`examples/index.html`](examples/index.html).
       </div>
     </section>
 
-    <script src="./dist/vanillajs-scrollspy.min.js"></script>
+    <script src="../dist/vanillajs-scrollspy.min.js"></script>
     <script>
-      const navbar = document.querySelector('#navbar');
-      const scrollspy = VanillaScrollspy(navbar);
-      scrollspy.init();
+      const menu = document.querySelector('#navbar')
+      const scrollspy = VanillaScrollspy({ menu })
+      scrollspy.init()
     </script>
   </body>
 </html>
@@ -167,17 +158,17 @@ Available in [`examples/index.html`](examples/index.html).
 Choose a number greater than or equal to 1.
 
 ``` javascript
-const navbar = document.querySelector('#navbar');
-const scrollspy = VanillaScrollspy(navbar, 1000);
-scrollspy.init();
+const menu = document.querySelector('#navbar')
+const scrollspy = VanillaScrollspy({ menu, speed: 1000 })
+scrollspy.init()
 ```
 
 ### Changing scroll type
 
 ``` javascript
-const navbar = document.querySelector('#navbar');
-const scrollspy = VanillaScrollspy(navbar, 1000, 'easeInOutQuint');
-scrollspy.init();
+const menu = document.querySelector('#navbar')
+const scrollspy = VanillaScrollspy({ menu, speed: 1000, easing: 'easeInOutQuint' })
+scrollspy.init()
 ```
 
 ## Contributing
