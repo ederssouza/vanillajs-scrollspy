@@ -1,6 +1,6 @@
 # VanillaJS ScrollSpy
 
-[![Build Status](https://travis-ci.org/ederssouza/vanillajs-scrollspy.svg?branch=master)](https://travis-ci.org/ederssouza/vanillajs-scrollspy)
+[![Build Status](https://travis-ci.org/ederssouza/vanillajs-scrollspy.svg?branch=master)](https://travis-ci.org/ederssouza/vanillajs-scrollspy) ![GitHub](https://img.shields.io/github/license/ederssouza/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/v/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/dw/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/dm/vanillajs-scrollspy)
 
 ScrollSpy in pure JavaScript.
 
