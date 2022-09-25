@@ -6,7 +6,6 @@
   "module": "dist/vanillajs-scrollspy.es.js",
   "scripts": {
     "build": "rollup --config",
-    "build:watch": "npm run build --watchAll",
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "npm run lint -- --fix",
     "prepush": "npm run lint",
