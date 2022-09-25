@@ -12,13 +12,7 @@ $ npm install vanillajs-scrollspy --save
 
 ## How to use
 
-```javascript
-const menu = document.querySelector('#navbar')
-const scrollspy = VanillaScrollspy({ menu })
-scrollspy.init()
-```
-
-- **menu:** menu selector (#id, .class, ...)
+- **menu:** HTML selector (#id, .class, ...)
 - **speed (optional):** scroll speed, default value `2000`
 - **easing (optional):** scroll type `'easeOutSine'`, `'easeInOutSine'` or `'easeInOutQuint'`, default value `'easeOutSine'`
 
@@ -32,19 +26,11 @@ const scrollspy = VanillaScrollspy({ menu })
 scrollspy.init()
 ```
 
-### CommonJS
-
-```javascript
-const VanillaScrollspy = require('vanillajs-scrollspy').default
-
-const menu = document.querySelector('#navbar')
-const scrollspy = VanillaScrollspy({ menu })
-scrollspy.init()
-```
-
 ### UMD in Browser
 
 ```html
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.1/dist/vanillajs-scrollspy.min.js"></script>
+<!-- or -->
 <script src="./dist/vanillajs-scrollspy.min.js"></script>
 ```
 
@@ -125,7 +111,7 @@ Available in [`public/index.html`](public/index.html).
       <h2 class="title">Contact</h2>
     </section>
 
-    <script src="../dist/vanillajs-scrollspy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.1/dist/vanillajs-scrollspy.min.js"></script>
     <script>
       const menu = document.querySelector('#navbar')
       const scrollspy = VanillaScrollspy({ menu })
