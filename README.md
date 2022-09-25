@@ -69,79 +69,60 @@ Available in [`public/index.html`](public/index.html).
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VanillaJS ScrollSpy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
       html, body {
         height: 100%;
       }
-      .navbar-brand > .navbar-item {
-        font-size: 20px;
+
+      nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+
+      nav a.active {
         font-weight: bold;
       }
-      .navbar-menu .navbar-item {
-        font-size: 14px;
-        transition: background-color .26s, color .26s;
-      }
-      .navbar-menu .navbar-item.active {
-        background-color: #222;
-        color: red;
-      }
+
       .page {
         height: 100%;
         padding: 80px 0;
         width: 100%;
+        background-color: #ddd;
       }
-      .page:nth-child(odd) { background-color: #ddd; }
+
       .page:nth-child(even) { background-color: #fff; }
     </style>
   </head>
 
   <body>
-    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <a title="VanillaJS ScrollSpy" class="navbar-item">VanillaJS ScrollSpy</a>
-
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navbar" class="navbar-menu navbar-scroll">
-          <div class="navbar-start">
-            <a href="#home" title="Home" class="navbar-item active">Home</a>
-            <a href="#portfolio" title="Portfolio" class="navbar-item">Portfolio</a>
-            <a href="#about" title="About" class="navbar-item">About</a>
-            <a href="#contact" title="Contact" class="navbar-item">Contact</a>
-          </div>
-        </div>
-      </div>
+    <nav id="navbar">
+      <a href="#home" title="Home" class="active">Home</a>
+      <a href="#portfolio" title="Portfolio">Portfolio</a>
+      <a href="#about" title="About">About</a>
+      <a href="#contact" title="Contact">Contact</a>
     </nav>
 
     <section id="home" class="page">
-      <div class="container">
-        <h2 class="title">Home</h2>
-      </div>
+      <h2 class="title">Home</h2>
     </section>
 
     <section id="portfolio" class="page">
-      <div class="container">
-        <h2 class="title">Portfolio</h2>
-      </div>
+      <h2 class="title">Portfolio</h2>
     </section>
 
     <section id="about" class="page">
-      <div class="container">
-        <h2 class="title">About</h2>
-      </div>
+      <h2 class="title">About</h2>
     </section>
 
     <section id="contact" class="page">
-      <div class="container">
-        <h2 class="title">Contact</h2>
-      </div>
+      <h2 class="title">Contact</h2>
     </section>
 
     <script src="../dist/vanillajs-scrollspy.min.js"></script>
