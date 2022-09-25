@@ -1,14 +1,14 @@
 language: node_js
 
 node_js:
-  - "7"
+  - "14"
 
 cache:
   diretories:
     "node_modules"
 
 before_script:
-  - npm run build
+  - npm run coverage-test
 
 after_success:
-  - npm run coveralls
+  - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

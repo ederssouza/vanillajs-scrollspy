@@ -12,8 +12,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "coverage-test": "jest --coverage",
-    "coverage-test:watch": "jest --coverage --watchAll",
-    "coveralls": "jest --coverage | coveralls"
+    "coverage-test:watch": "jest --coverage --watchAll"
   },
   "files": ["dist"],
   "repository": {
