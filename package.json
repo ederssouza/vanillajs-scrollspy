@@ -16,10 +16,7 @@
     "coverage-test:watch": "jest --coverage --watchAll",
     "coveralls": "jest --coverage | coveralls"
   },
-  "files": [
-    "dist",
-    "lib"
-  ],
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ederssouza/vanillajs-scrollspy.git"
