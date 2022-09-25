@@ -1,6 +1,6 @@
 # VanillaJS ScrollSpy
 
-[![Build Status](https://travis-ci.org/ederssouza/vanillajs-scrollspy.svg?branch=master)](https://travis-ci.org/ederssouza/vanillajs-scrollspy) ![GitHub](https://img.shields.io/github/license/ederssouza/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/v/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/dw/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/dm/vanillajs-scrollspy)
+![GitHub](https://img.shields.io/github/license/ederssouza/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/v/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/dw/vanillajs-scrollspy) ![npm](https://img.shields.io/npm/dm/vanillajs-scrollspy)
 
 ScrollSpy in pure JavaScript.
 
@@ -29,7 +29,7 @@ scrollspy.init()
 ### UMD in Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.1/dist/vanillajs-scrollspy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.3/dist/vanillajs-scrollspy.min.js"></script>
 <!-- or -->
 <script src="./dist/vanillajs-scrollspy.min.js"></script>
 ```
@@ -111,7 +111,7 @@ Available in [`public/index.html`](public/index.html).
       <h2 class="title">Contact</h2>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.1/dist/vanillajs-scrollspy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.3/dist/vanillajs-scrollspy.min.js"></script>
     <script>
       const menu = document.querySelector('#navbar')
       const scrollspy = VanillaScrollspy({ menu })
