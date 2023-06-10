@@ -29,7 +29,7 @@ scrollspy.init()
 ### UMD in Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.3/dist/vanillajs-scrollspy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-scrollspy@3.0.5/dist/vanillajs-scrollspy.min.js"></script>
 <!-- or -->
 <script src="./dist/vanillajs-scrollspy.min.js"></script>
 ```

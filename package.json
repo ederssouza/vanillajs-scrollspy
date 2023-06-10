@@ -1,6 +1,6 @@
 {
   "name": "vanillajs-scrollspy",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "ScrollSpy in pure JavaScript",
   "main": "dist/vanillajs-scrollspy.cjs.js",
   "module": "dist/vanillajs-scrollspy.es.js",
@@ -14,7 +14,9 @@
     "coverage-test": "jest --coverage",
     "coverage-test:watch": "jest --coverage --watchAll"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ederssouza/vanillajs-scrollspy.git"
