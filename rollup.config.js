@@ -1,6 +1,8 @@
 import { terser } from 'rollup-plugin-terser'
+import del from 'rollup-plugin-delete'
 
 export default {
+  plugins: [del({ targets: 'dist/*' })],
   input: 'src/VanillaScrollspy/index.js',
   output: [
     {
